@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chat with Documents</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="masthead">
+        <div class="title-block">
+          <p class="eyebrow">LOCAL JAVA FULL STACK RAG</p>
+          <h1>Chat with<br />Documents</h1>
+          <p class="subtitle">A transparent document question-answering workshop.</p>
+        </div>
+
+        <div class="status-row" aria-live="polite">
+          <span id="ollamaStatus" class="status-pill">Ollama: checking</span>
+          <span id="modelStatus" class="status-pill">Model: checking</span>
+          <span id="indexStatus" class="status-pill">Index: checking</span>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="panel upload-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow panel-eyebrow">01 / KNOWLEDGE BASE</p>
+              <h2>Bring a document into the conversation</h2>
+            </div>
+            <button id="clearDocuments" class="ghost-button" type="button">Clear index</button>
+          </div>
+
+          <label class="dropzone" for="file">
+            <input id="file" type="file" accept=".pdf,.docx" />
+            <span class="drop-icon">+</span>
+            <strong>Choose a PDF or DOCX</strong>
+            <small>Text-based PDFs work best. Maximum 20 MB.</small>
+          </label>
+
+          <p id="uploadMessage" class="message"></p>
+          <div id="documents" class="document-list"></div>
+        </section>
+
+        <section class="workspace">
+          <div class="panel chat-panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow panel-eyebrow">02 / GROUNDED CHAT</p>
+                <h2>Ask your documents</h2>
+              </div>
+              <button id="clearChat" class="ghost-button" type="button">Clear chat</button>
+            </div>
+
+            <div id="chat" class="chat-log">
+              <div class="empty">Upload a document, then ask a specific question about it.</div>
+            </div>
+
+            <form id="chatForm" class="chat-form">
+              <textarea id="question" placeholder="What are the eligibility requirements?" required></textarea>
+              <button class="primary-button" type="submit">Ask <span>↗</span></button>
+            </form>
+          </div>
+
+          <aside class="panel settings-panel">
+            <p class="eyebrow panel-eyebrow">03 / RETRIEVAL LENS</p>
+            <h2>Settings</h2>
+
+            <label class="field">
+              <span>Top-K</span>
+              <input id="topK" type="number" min="1" max="10" value="3" />
+            </label>
+
+            <label class="field">
+              <span>Similarity threshold</span>
+              <input id="threshold" type="number" min="0" max="1" step="0.05" value="0.45" />
+            </label>
+
+            <label class="field">
+              <span>Temperature</span>
+              <input id="temperature" type="number" min="0" max="1" step="0.1" value="0.2" />
+            </label>
+
+            <p class="hint">Only chunks above the threshold are sent to Ollama. The scores make retrieval visible.</p>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <script src="/js/app.js"></script>
+  </body>
+</html>
+
