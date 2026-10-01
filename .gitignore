@@ -12,14 +12,17 @@ models/
 
 # Python cache
 __pycache__/
+*.py[cod]
 
 # IDE files
 .vscode/
 .idea/
 
 # Logs
-*.log.venv/
-__pycache__/
-*.py[cod]
+*.log
+
+# Streamlit secrets
 .streamlit/secrets.toml
+
+# Uploaded data
 data/uploads/
