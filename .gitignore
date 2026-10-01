@@ -30,4 +30,10 @@ data/uploads/target/
 models/
 __pycache__/
 *.pyc
+.envtarget/
+.venv/
+models/
+__pycache__/
+*.pyc
 .env
+data/
