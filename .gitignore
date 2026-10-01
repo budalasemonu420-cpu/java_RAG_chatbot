@@ -25,4 +25,9 @@ __pycache__/
 .streamlit/secrets.toml
 
 # Uploaded data
-data/uploads/
+data/uploads/target/
+.venv/
+models/
+__pycache__/
+*.pyc
+.env
