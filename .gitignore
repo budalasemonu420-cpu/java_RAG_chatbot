@@ -1,4 +1,24 @@
+# Python virtual environment
 .venv/
+
+# Java build files
+target/
+
+# Local AI model files
+models/
+
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log.venv/
 __pycache__/
 *.py[cod]
 .streamlit/secrets.toml
