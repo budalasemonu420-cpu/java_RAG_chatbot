@@ -1,1 +1,0 @@
-"""Core document RAG components for the workshop application."""

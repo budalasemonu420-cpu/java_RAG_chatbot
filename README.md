@@ -139,7 +139,7 @@ Example questions: `What is the course duration?`, `What are the examination req
 mvn test
 ```
 
-Tests cover text cleanup, chunk metadata and overlap, cosine similarity, and thresholded Top-K retrieval. PDF/DOCX integration tests can be added with small workshop fixtures.
+Tests cover text cleanup, PDF/DOCX extraction (including DOCX tables), chunk metadata and overlap, cosine similarity, thresholded and de-duplicated Top-K retrieval, model selection, prompt construction, and RAG pipeline behavior.
 
 ## Troubleshooting
 
@@ -149,5 +149,3 @@ Tests cover text cleanup, chunk metadata and overlap, cosine similarity, and thr
 - **DOCX fails:** upload a valid `.docx`, not a renamed file.
 - **Embedding model failed:** confirm `models/all-MiniLM-L6-v2/model.onnx` and `vocab.txt` exist and match the model.
 - **Port 8080 is busy:** set `server.port=8081`, then open `http://localhost:8081`.
-
-The old Python files may remain in this folder as historical workshop material; the runnable application described here is the Java/Maven project.
