@@ -15,7 +15,7 @@ RAG does not make an LLM read an entire PDF automatically. This application firs
 
 ## Technology
 
-- Java 21, Spring Boot 3.5, Maven
+- Java 25, Spring Boot 3.5, Maven
 - Apache PDFBox 3 for selectable PDF text and page numbers
 - Apache POI 5 for DOCX paragraphs
 - ONNX Runtime for local `all-MiniLM-L6-v2` sentence embeddings
@@ -36,7 +36,7 @@ Use a trusted export of the Hugging Face `sentence-transformers/all-MiniLM-L6-v2
 
 ## Windows setup
 
-Install Java 21, Maven, and Ollama, then verify:
+Install Java 25, Maven, and Ollama, then verify:
 
 ```powershell
 java -version
